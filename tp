@@ -1,0 +1,22 @@
+import time
+
+class tarjeta:
+  def __init__(self):
+    self.money=0
+    self.colant=0 #linea del bondi anterior
+    self.tiempoant=0 #hora del bondi anterior
+  def pagar():
+  def recarga():
+  def saldo():
+  def vrel():
+class colectivo:
+  def __init__(self,empresa,linea,interno):
+    self.int=interno
+    self.linea=linea
+    self.co=empresa
+    
+class viaje:
+  def __init__(self,monto,colectivo,horario):
+    self.hora=horario
+    self.monto=monto
+    self.cole=colectivo
