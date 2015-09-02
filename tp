@@ -9,6 +9,11 @@ class tarjeta:
   def recarga():
   def saldo():
   def vrel():
+  
+class tarjetamedioboleto(tarjeta):
+
+def pagar(self, monto):
+
 class colectivo:
   def __init__(self,empresa,linea,interno):
     self.int=interno
