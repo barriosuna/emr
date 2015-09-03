@@ -52,7 +52,7 @@ class tarjeta:
 class medio(tarjeta):
 
   def pagar(self):
-    
+  # La onda es que si no esta en horario escolar vaya directamente a pay.    
 
 
 class colectivo:
