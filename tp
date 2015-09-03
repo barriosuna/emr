@@ -43,7 +43,7 @@ class tarjeta:
   def saldo(self):
     return self.money
   
-  def vrel():
+  def vrel(self):
   
   
   
@@ -51,7 +51,26 @@ class tarjeta:
   
 class medio(tarjeta):
 
-  def pagar(self):
+  def pagar(self,horario):
+    if horario<6:
+      self.pay
+    elif self.transbordo=true:
+    if self.money>=0.96:
+        self.money=self.money-0.96
+        self.valido=false
+        self.colant=0
+        self.tiempoant=0
+        return true
+    elif self.money>=2.9:
+      self.money=self.money-2.9
+      if self.valido=false:
+        self.valido=true
+        self.tiempoant=#tiempo actual
+        self.colant=colectivo.line
+        return true
+    else:
+      return false
+      
   # La onda es que si no esta en horario escolar vaya directamente a pay.    
 
 
@@ -59,7 +78,7 @@ class colectivo:
   def __init__(self,empresa,linea,interno):
     self.int=interno
     self.linea=linea
-    self.co=empresa
+    self.cole=empresa
     
 class viaje:
   def __init__(self):
