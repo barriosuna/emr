@@ -5,24 +5,51 @@ class tarjeta:
     self.money=0
     self.colant=0 #linea del bondi anterior
     self.tiempoant=0 #hora del bondi anterior
+    self.valido=false #si hubo un transbordo anterior
+    self.viajes=[]
   def pagar(self):
-    if self.EsTransbordo =true{
-      
-      if self.money>1.90{
-      
+    self.pay(self,cole,horario)
+  
+  def pay(self,colectivo,horario):
+    if self.EsTransbordo==true:
+      if self.money>=1.90:
         self.money=self.money-1,90
-        return true;}}
-        else{
-          if self.money>5,75{
-          self.money=self.money-2,90
-        return true;}
-        else{ false;}
-        }
-  def recarga():
-  def saldo():
+        self.valido=false
+        self.colant=0
+        self.tiempoant=0
+        return true
+    elif self.money>=5.75:
+      self.money=self.money-5.75
+      if self.valido=false:
+        self.valido=true
+        self.tiempoant=#tiempo actual
+        self.colant=colectivo.line
+        return true
+    else:
+      return false
+      
+  def transbordo(self):
+    if self.colant!=colectivo.linea and self.valido=false and (self.hora-self.tiempoant)<timedelta(minutes=60):
+      return true
+  
+  def recarga(self,cant):
+    self.cant=cant
+    if self.cant==196:
+      self.money=self.money+230
+    elif self.cant==368:
+      self.money=self.money+460
+    else:
+      self.money=self.money+self.cant
+  def saldo(self):
+    return self.money
+  
   def vrel():
   
-class tarjetamedioboleto(tarjeta):
+  
+  
+  
+  
+class medio(tarjeta):
 
   def pagar(self):
     
@@ -35,7 +62,16 @@ class colectivo:
     self.co=empresa
     
 class viaje:
-  def __init__(self,monto,colectivo,horario):
+  def __init__(self):
+    self.monto=0
+    self.horario=0
+    self.emp=""
+    self.cole=0
+    self.int=0
+  def tour(self,monto,cole,emp,horario,int):
     self.hora=horario
     self.monto=monto
     self.cole=colectivo
+    self.int=int
+    self.emp=emp
+
