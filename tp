@@ -5,14 +5,28 @@ class tarjeta:
     self.money=0
     self.colant=0 #linea del bondi anterior
     self.tiempoant=0 #hora del bondi anterior
-  def pagar():
+  def pagar(self):
+    if self.EsTransbordo =true{
+      
+      if self.money>1.90{
+      
+        self.money=self.money-1,90
+        return true;}}
+        else{
+          if self.money>5,75{
+          self.money=self.money-2,90
+        return true;}
+        else{ false;}
+        }
   def recarga():
   def saldo():
   def vrel():
   
 class tarjetamedioboleto(tarjeta):
 
-def pagar(self, monto):
+  def pagar(self):
+    
+
 
 class colectivo:
   def __init__(self,empresa,linea,interno):
