@@ -50,7 +50,8 @@ class tarjeta:
     return self.money
   
   def vrel(self):
-    
+    for i to self.viajes
+      print (str(i.horario)) + " - " + str(i.monto)) + " - " + str(i.emp)) + " - " + (str(i.cole)) + " - " + (str(i.int))
   
   
   
