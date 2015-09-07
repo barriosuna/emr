@@ -13,13 +13,13 @@ tarje.pay(bondi1,"12/12/1998 2:30")
 tarje.pay(bondi2,"12/12/1998 2:50")
 
 #Medio comun
-media.pay(bondi1,"12/12/1999 4:10")
+media.pay(bondi1,"12/12/1999 8:10")
 #Medio con transbordo
-media.pay(bondi2,"12/12/1999 4:30")
+media.pay(bondi2,"12/12/1999 8:30")
 #Media fuera de horario escolar
-media.pay(bondi1,"12/12/1999 5:00")
+media.pay(bondi1,"12/12/1999 4:00")
 #Media fuera de horario escolar y con transbordo
-#media.pay(bondi2,"12/12/1999 05:20")
+media.pay(bondi2,"12/12/1999 4:20")
 
 def test1():
 	assert tarje.saldo()==452.35
