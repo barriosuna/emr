@@ -8,16 +8,16 @@ bondi1=colectivo("pepe",136,12)
 bondi2=colectivo("papa",137,13)
 
 #viaje comun
-tarje.pay(bondi1,"12/12/1998 12:30 ")
+tarje.pay(bondi1,"12/12/1998 12:30")
 #Con transbordo
 tarje.pay(bondi2,"12/12/1998 12 40")
 
 #Medio comun
-media.pay(bondi1,"12/12/1999 14:10 ")
+media.pay(bondi1,"12/12/1999 14:10")
 #Medio con transbordo
-media.pay(bondi2,"12/12/1999 14:30 ")
+media.pay(bondi2,"12/12/1999 14:30")
 #Media fuera de horario escolar
-media.pay(bondi1,"12/12/1999 05:00 ")
+media.pay(bondi1,"12/12/1999 05:00")
 #Media fuera de horario escolar y con transbordo
 #media.pay(bondi2,"12/12/1999 05:20")
 
