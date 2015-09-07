@@ -3,7 +3,7 @@ class tarjeta:
     self.money=0
     self.colant=0 #linea del bondi anterior
     self.tiempoant=0 #hora del bondi anterior
-    self.valido=false #si hubo un transbordo anterior
+    self.valido=False #si hubo un transbordo anterior
     self.vieja = viaje()
     self.viajes=[]
     
@@ -35,8 +35,11 @@ class tarjeta:
   def transbordo(self,horario,colectivo):
     self.horario=horario
     self.pi= self.horario-self.tiempoant
-    if self.colant!=colectivo.linea and self.valido=true and (pi < 60):
-      return true
+    if self.colant!=colectivo.linea and self.valido==True and pi<60:
+      return True
+    else:
+      False 
+
   
   def recarga(self,cant):
     self.cant=cant
@@ -47,11 +50,12 @@ class tarjeta:
     else:
       self.money=self.money+self.cant
   def saldo(self):
+    print str(self.money)
     return self.money
   
   def vrel(self):
-    for i to self.viajes
-      print (str(i.horario)) + " - " + str(i.monto)) + " - " + str(i.emp)) + " - " + (str(i.cole)) + " - " + (str(i.int))
+    for i in self.viajes:
+      print (str(i.horario) + " - " + str(i.monto) + " - " + str(i.emp) + " - " + (str(i.cole)) + " - " + (str(i.int)))
   
   
   
@@ -61,8 +65,8 @@ class medio(tarjeta):
   def pagar(self,horario):
     if horario<6:
       self.pay
-    elif self.transbordo=true:
-    if self.money>=0.96:
+    elif self.transbordo==True:
+      if self.money>=0.96:
         self.money=self.money-0.96
         self.valido=false
         self.colant=0
@@ -70,13 +74,13 @@ class medio(tarjeta):
         return true
     elif self.money>=2.9:
       self.money=self.money-2.9
-      if (self.valido==false):
-        self.valido=true
-        self.tiempoant=#tiempo actual
+      if (self.valido==False):
+        self.valido=True
+        self.tiempoant=horario
         self.colant=colectivo.line
-        return true
+        return True
     else:
-      return false
+      return False
       
   # La onda es que si no esta en horario escolar vaya directamente a pay.    
 
@@ -101,3 +105,7 @@ class viaje:
     self.interno=interno
     self.company=company
 
+t=tarjeta()
+t.saldo()
+t.recarga(368)
+t.saldo()
