@@ -165,8 +165,8 @@ tarje=tarjeta()
 media=medio()
 tarje.recarga(368)
 media.recarga(368)
-bondi1=colectivo(pepe,136,12)
-bondi2=colectivo(papa,137,13)
+bondi1=colectivo("pepe",136,12)
+bondi2=colectivo("papa",137,13)
 
 #viaje comun
 tarje.pay(bondi1,"12/12/1998 12:30 ")
