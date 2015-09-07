@@ -8,18 +8,18 @@ bondi1=colectivo("pepe",136,12)
 bondi2=colectivo("papa",137,13)
 
 #viaje comun
-tarje.pay(bondi1,"12/12/1998 2:30")
+tarje.pagar(bondi1,"12/12/1998 2:30")
 #Con transbordo
-tarje.pay(bondi2,"12/12/1998 2:50")
+tarje.pagar(bondi2,"12/12/1998 2:50")
 
 #Medio comun
-media.pay(bondi1,"12/12/1999 8:10")
+media.pagar(bondi1,"12/12/1999 8:10")
 #Medio con transbordo
-media.pay(bondi2,"12/12/1999 8:30")
+media.pagar(bondi2,"12/12/1999 8:30")
 #Media fuera de horario escolar
-media.pay(bondi1,"12/12/1999 4:00")
+media.pagar(bondi1,"12/12/1999 4:00")
 #Media fuera de horario escolar y con transbordo
-media.pay(bondi2,"12/12/1999 4:20")
+media.pagar(bondi2,"12/12/1999 4:20")
 
 def test1():
 	assert tarje.saldo()==452.35
