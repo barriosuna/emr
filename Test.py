@@ -24,7 +24,7 @@ def test1():
 	assert tarje.saldo()==452.35
 def test2():
 	assert media.saldo()==448.49
-def test3:
+def test3():
 	if  tarje.vrel():
 		pi==true
 	else:
