@@ -85,7 +85,8 @@ class medio(tarjeta):
         self.money=self.money-0.96
         self.valido=False
         self.colant=0
-        self.tiempoant=0
+        hour="01/01/0001 0:00"
+        self.tiempoant= datetime.strptime(hour, "%d/%m/%Y %H:%M") 
         self.vieja.tour(horario1, 0.96 ,colectivo.linea,colectivo.interno,colectivo.empresa)
         self.viaje.append (self.vieja)
         #self,horario1,monto,cole,interno,company
