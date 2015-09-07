@@ -1,66 +1,40 @@
-#ARREGLAR TIEMPO PRIMERO QUE NADA
-from tp.py import *
-#Carga de Saldo
+from tp.py import*
+tarje=tarjeta()
+media=medio()
+tarje.recarga(368)
+media.recarga(368)
+bondi1=colectivo(pepe,136,12)
+bondi2=colectivo(papa,137,13)
+
+#viaje comun
+tarje.pay(bondi1,"12/12/1998 12:30 ")
+#Con transbordo
+tarje.pay(bondi2,"12/12/1998 12 40")
+
+#Medio comun
+media.pay(bondi1,"12/12/1999 14:10 ")
+#Medio con transbordo
+media.pay(bondi2,"12/12/1999 14:30 ")
+#Media fuera de horario escolar
+media.pay(bondi1,"12/12/1999 05:00 ")
+#Media fuera de horario escolar y con transbordo
+#media.pay(bondi2,"12/12/1999 05:20")
+
 def test1():
-   tarj=tarjeta()
-   tarj.recarga(196)
-   assert tarj._Saldo == 230
-
+	assert tarje.saldo()==452.35
 def test2():
-	tarja=tarjeta()
-	tarja.recarga(368)
-	assert tarj.saldo==460
-#Pago en tarjeta comun sin transbordo por haberlo usado anteriormente
-def test3():
-	tarje=tarjeta()
-	C136=colectivo(15,136,2)
-	tarje.recarga(368)
-	tarje.pagar(C136,1000)
-	assert tarje.saldo()==363.25
-#Pago comun con transbordo anulado por mismo bondi
+	assert media.saldo()==448.49
+def test3:
+	if  tarje.vrel():
+		pi==true
+	else:
+		false
+	assert pi==true
 
-def test4():
-	tarje=tarjeta()
-	C136=colectivo(15,136,2)
-	tarje.recarga(368)
-	tarje.pagar(C136,1000)
-	tarje.pagar(C136,1500)
-	assert tarje.saldo()==357.5
-#Pago comun con transbordo anulado por tiempo
-#Primero hay que arreglar el tiempo
-def test5():
-	tarje=tarjeta()
-	C136=colectivo(15,136,2)
-	C137=colectivo(15,137,5)
-	tarje.recarga(368)
-	tarje.pagar(C136,1000)
-	tarje.pagar(C137,1500)
-	assert tarje.saldo()==357.5
-	
 
-#Pago comun con transbordo
-def test6():
-	tarje=tarjeta()
-	C136=colectivo(15,138,2)
-	tarje.recarga(368)
-	tarje.pagar(C136,1000)
-	tarje.pagar(C138,1500)
-	assert tarje.saldo()==361.1
 
-def testi():
-	tarje=tarjeta
-	C136=colectivo(15,136,2)
-	tarje.recarga(368)
-	tarje.pagar(C136,1000)
-	tarje.pagar(C136,1500)
 
-def testa():
-	tarta=medio()
-	tarta.recarga(368)
-	tarta.pagar(C136,5)
-	C136=colectivo(15,136,2)
-def teste():
-	tarte=tarjeta()
-	C136=colectivo(15,136,2)
-	tarte.recarga(368)
-	tarje.pagar()
+
+
+
+
