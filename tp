@@ -3,11 +3,11 @@ class tarjeta:
     self.money=0
     self.colant=0 #linea del bondi anterior
     self.tiempoant=0 #hora del bondi anterior
-    self.valido=False #si hubo un transbordo anterior
+    self.valido=False rue, se puede, false no
     self.vieja = viaje()
     self.viajes=[]
     
-  def pagar(self):
+  def pagar(self,colectivo,horario):
     self.pay(self,cole,horario)
   
   def pay(self,colectivo,horario):
@@ -22,15 +22,15 @@ class tarjeta:
         return true
     elif self.money>=5.75:
       self.money=self.money-5.75
-      if self.valido==false:
-        self.valido=true
+      if self.valido==False:
+        self.valido=True
         self.tiempoant=horario
         self.colant=colectivo.linea
         self.vieja.tour(colectivo,horario,5,75)
         self.viaje.append (self.vieja)
-        return true
+        return True
     else:
-      return false
+      return False
       
   def transbordo(self,horario,colectivo):
     self.horario=horario
@@ -38,7 +38,7 @@ class tarjeta:
     if self.colant!=colectivo.linea and self.valido==True and pi<60:
       return True
     else:
-      False 
+      return False 
 
   
   def recarga(self,cant):
@@ -109,3 +109,4 @@ t=tarjeta()
 t.saldo()
 t.recarga(368)
 t.saldo()
+
