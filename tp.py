@@ -10,6 +10,8 @@ class tarjeta:
     self.vieja = viaje()
     self.viaje=[]
       
+  def pagar(self,colectivo,horario):
+    self.pay(colectivo,horario)
   def pay(self,colectivo,horario):
     horario1 = datetime.strptime(horario,"%d/%m/%Y %H:%M")    
     if self.transbordo(colectivo,horario1)==True:
@@ -74,36 +76,10 @@ class tarjeta:
   
 class medio(tarjeta):
 
-  def pay(self,colectivo,horario):
+  def pagar(self,colectivo,horario):
     horario1 = datetime.strptime(horario,"%d/%m/%Y %H:%M")
     if (horario1.hour<6):
-      if self.transbordo(colectivo,horario1)==True:
-        if self.money>=1.90:
-          self.money=self.money-1,90
-          self.valido=False
-          self.colant=0
-          hour="01/01/0001 0:00"
-          self.tiempoant= datetime.strptime(hour, "%d/%m/%Y %H:%M") #hora del bondi anterior
-          self.vieja.tour(horario1,1.9,colectivo.linea,colectivo.interno,colectivo.empresa)
-          self.viaje.append (self.vieja)
-          #self,horario1,monto,cole,interno,company
-          return True
-        else:
-          print ("Saldo insuficiente")
-          return False
-      elif self.money>=5.75:
-        self.money=self.money-5.75
-        if self.valido==False:
-          self.valido=True
-          self.tiempoant=datetime.strptime(horario,"%d/%m/%Y %H:%M")
-          self.colant=colectivo.linea
-          self.vieja.tour(horario1,5.75,colectivo.linea,colectivo.interno,colectivo.empresa)
-          self.viaje.append (self.vieja)
-          return True
-      else:
-        print ("Saldo insuficiente")
-        return False
-
+      self.pay(colectivo,horario)
     elif self.transbordo(colectivo,horario1)==True:
       if self.money>=0.96:
         self.money=self.money-0.96
