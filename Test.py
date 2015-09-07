@@ -1,5 +1,5 @@
 #ARREGLAR TIEMPO PRIMERO QUE NADA
-
+from tp.py import *
 #Carga de Saldo
 def test1():
    tarj=tarjeta()
