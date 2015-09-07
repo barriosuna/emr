@@ -19,7 +19,7 @@ media.pagar(bondi2,"12/12/1999 8:30")
 #Media fuera de horario escolar
 media.pagar(bondi1,"12/12/1999 4:00")
 #Media fuera de horario escolar y con transbordo
-media.pagar(bondi2,"12/12/1999 4:20")
+media.pagar(bondi2,"12/12/1999 4:22")
 
 def test1():
 	assert tarje.saldo()==452.35
