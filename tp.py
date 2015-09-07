@@ -75,7 +75,7 @@ class medio(tarjeta):
 
   def pay(self,colectivo,horario):
     horario1 = datetime.strptime(horario, "%d/%m/%Y %H:%M")
-    if (horario.hour<6):
+    if (horario1.hour<6):
       self.pay2()
     elif self.transbordo(colectivo,horario1)==True:
       if self.money>=0.96:
