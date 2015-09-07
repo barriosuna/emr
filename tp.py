@@ -112,7 +112,8 @@ def pay2(self,colectivo,horario):
         self.money=self.money-1.90
         self.valido=False
         self.colant=0
-        self.tiempoant=datetime.strptime("00/00/0000 00:00 ", "%d/%m/%Y %H:%M") #hora del bondi anterior
+        horita="01/01/0001 0:00"
+        self.tiempoant=datetime.strptime(horita, "%d/%m/%Y %H:%M") #hora del bondi anterior
         self.vieja.tour(horario1,1.9,colectivo.linea,colectivo.interno,colectivo.empresa)
         self.viaje.append (self.vieja)
         #self,horario1,monto,cole,interno,company
