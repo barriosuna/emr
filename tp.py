@@ -93,17 +93,17 @@ class medio(tarjeta):
           return False
       elif self.money>=5.75:
         self.money=self.money-5.75
-          if self.valido==False:
-            self.valido=True
-            self.tiempoant=horario1
-            self.colant=colectivo.linea
-            self.vieja.tour(horario1,5.75,colectivo.linea,colectivo.interno,colectivo.empresa)
-            self.viaje.append (self.vieja)
-            return True
-          else:
-          print ("Saldo insuficiente")
-          return False
-    
+        if self.valido==False:
+          self.valido=True
+          self.tiempoant=horario1
+          self.colant=colectivo.linea
+          self.vieja.tour(horario1,5.75,colectivo.linea,colectivo.interno,colectivo.empresa)
+          self.viaje.append (self.vieja)
+          return True
+      else:
+        print ("Saldo insuficiente")
+        return False
+
     elif self.transbordo(colectivo,horario1)==True:
       if self.money>=0.96:
         self.money=self.money-0.96
