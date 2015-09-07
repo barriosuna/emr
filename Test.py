@@ -10,7 +10,7 @@ bondi2=colectivo("papa",137,13)
 #viaje comun
 tarje.pay(bondi1,"12/12/1998 2:30")
 #Con transbordo
-tarje.pay(bondi2,"12/12/1998 2 40")
+tarje.pay(bondi2,"12/12/1998 2:40")
 
 #Medio comun
 media.pay(bondi1,"12/12/1999 4:10")
