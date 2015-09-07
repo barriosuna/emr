@@ -61,7 +61,7 @@ class tarjeta:
     else:
       self.money=self.money+self.cant
   def saldo(self):
-    print str(self.money)
+    print (str(self.money))
     return self.money
   
   def vrel(self):
