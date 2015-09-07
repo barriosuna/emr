@@ -5,7 +5,7 @@ class tarjeta:
     self.tiempoant=0 #hora del bondi anterior
     self.valido=False #rue, se puede, false no
     self.vieja = viaje()
-    self.viajes=[]
+    self.viaje=[]
     
   
   def pay(self,colectivo,horario):
@@ -53,8 +53,8 @@ class tarjeta:
     return self.money
   
   def vrel(self):
-    for i in self.viajes:
-      print (str(i.horario) + " - " + str(i.monto) + " - " + str(i.emp) + " - " + (str(i.cole)) + " - " + (str(i.int)))
+    for i in self.viaje:
+      print (str(i.horario) + " - " + str(i.monto) + " - " + str(i.empresa) + " - " + (str(i.colectivo)) + " - " + (str(i.interno)))
   
   
   
@@ -98,13 +98,13 @@ class viaje:
   def __init__(self):
     self.monto=0
     self.horario=0
-    self.company=""
-    self.cole=0
+    self.empresa=""
+    self.colectivo=0
     self.interno=0
   def tour(self,horario,monto,colectivo,interno,empresa):
     self.hora=horario
     self.monto=monto
-    self.cole=cole
+    self.colectivo=colectivo
     self.interno=interno
     self.empresa=empresa
 
