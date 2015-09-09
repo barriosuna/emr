@@ -1,3 +1,4 @@
+
 #Good Guy Santos se levanta temprano y arregla el codigo 
 from datetime import datetime
 class tarjeta:
@@ -7,7 +8,9 @@ class tarjeta:
     hora="01/01/0001 0:00"
     self.tiempoant=datetime.strptime(hora,"%d/%m/%Y %H:%M") #hora del bondi anterior
     self.valido=False #rue, se puede, false no
-    self.viajes=[]
+    self.indice=0
+    self.viajes=[None]*20
+    self.viajes[0]=viaje(self.tiempoant,0,0,0,0)
       
   def pagar(self,colectivo,horario):
     self.pay(colectivo,horario)
@@ -20,8 +23,9 @@ class tarjeta:
         self.colant=0
         hour="01/01/0001 0:00"
         self.tiempoant= datetime.strptime(hour, "%d/%m/%Y %H:%M") #hora del bondi anterior
-        self.vieja= viaje(horario1,1.9,colectivo.linea,colectivo.interno,colectivo.empresa)
-        self.viajes.append (self.vieja)
+        self.viajes[(self.indice)]=viaje(horario1,1.9,colectivo.linea,colectivo.interno,colectivo.empresa)
+        self.indice=(self.indice+1)
+
         #self,horario1,monto,cole,interno,company
         
         return True
@@ -31,12 +35,13 @@ class tarjeta:
     elif self.money>=5.75:
       self.money=self.money-5.75
       if self.valido==False:
-        self.valido=True
-        self.tiempoant=horario1
-        self.colant=colectivo.linea
-        self.vieja = viaje(horario1,5.75,colectivo.linea,colectivo.interno,colectivo.empresa)
-        self.viajes.append (self.vieja)
-        return True
+          self.valido=True
+      self.tiempoant=horario1
+      self.colant=colectivo.linea
+      self.viajes[(self.indice)]=viaje(horario1,5.75,colectivo.linea,colectivo.interno,colectivo.empresa)
+      self.indice=(self.indice+1)
+
+      return True
     else:
       print ("Saldo insuficiente")
       return False    
@@ -69,8 +74,9 @@ class tarjeta:
   
   def vrel(self):
     for i in self.viajes:
-      print (str(i.hora) + " - " + str(i.monto) + " - " + str(i.empresa) + " - " + (str(i.colectivo)) + " - " + (str(i.interno)))
-  
+      if i!=None:
+        print (str(i.hora) + " - " + str(i.monto) + " - " + str(i.empresa) + " - " + (str(i.colectivo)) + " - " + (str(i.interno)))
+      
   
   
   
@@ -87,8 +93,9 @@ class medio(tarjeta):
         self.colant=0
         hour="01/01/0001 0:00"
         self.tiempoant= datetime.strptime(hour, "%d/%m/%Y %H:%M") 
-        self.vieja = viaje(horario1, 0.96 ,colectivo.linea,colectivo.interno,colectivo.empresa)
-        self.viajes.append (self.vieja)
+        self.viajes[(self.indice)]=viaje(horario1,0.96,colectivo.linea,colectivo.interno,colectivo.empresa)
+        self.indice=(self.indice+1)
+
         #self,horario1,monto,cole,interno,company
         return True
       else:
@@ -97,13 +104,13 @@ class medio(tarjeta):
     elif self.money>=2.9:
       self.money=self.money-2.9
       if self.valido==False:
-        self.valido=True
-        self.tiempoant=horario1
-        self.colant=colectivo.linea
-        self.vieja = viaje(horario1,2.9,colectivo.linea,colectivo.interno,colectivo.empresa)
-        self.viajes.append (self.vieja)
-        
-        return True
+          self.valido=True
+      self.tiempoant=horario1
+      self.colant=colectivo.linea
+    
+      self.viajes[(self.indice)]=viaje(horario1,2.9,colectivo.linea,colectivo.interno,colectivo.empresa)
+      self.indice=(self.indice+1)    
+      return True
     else:
       print("Saldo insuficiente")
       return False
