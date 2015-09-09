@@ -24,6 +24,7 @@ class tarjeta:
         self.vieja.tour(horario1,1.9,colectivo.linea,colectivo.interno,colectivo.empresa)
         self.viaje.append (self.vieja)
         #self,horario1,monto,cole,interno,company
+        self.vieja=viaje()
         return True
       else:
         print ("Saldo insuficiente")
@@ -36,6 +37,7 @@ class tarjeta:
         self.colant=colectivo.linea
         self.vieja.tour(horario1,5.75,colectivo.linea,colectivo.interno,colectivo.empresa)
         self.viaje.append (self.vieja)
+        self.vieja=viaje()
         return True
     else:
       print ("Saldo insuficiente")
@@ -89,6 +91,7 @@ class medio(tarjeta):
         self.tiempoant= datetime.strptime(hour, "%d/%m/%Y %H:%M") 
         self.vieja.tour(horario1, 0.96 ,colectivo.linea,colectivo.interno,colectivo.empresa)
         self.viaje.append (self.vieja)
+        self.vieja=viaje()
         #self,horario1,monto,cole,interno,company
         return True
       else:
@@ -102,6 +105,7 @@ class medio(tarjeta):
         self.colant=colectivo.linea
         self.vieja.tour(horario1,2.9,colectivo.linea,colectivo.interno,colectivo.empresa)
         self.viaje.append (self.vieja)
+        self.vieja=viaje()
         return True
     else:
       print("Saldo insuficiente")
