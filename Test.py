@@ -1,4 +1,5 @@
 from tp import *
+from datetime import datetime
 
 #Tarjeta Comun
 
@@ -71,18 +72,30 @@ def testtransbordo():
 	bondi1=colectivo("pepe",136,12)
 	bondi2=colectivo("papa",137,13)
 	#Sin transbordo luego de crearse
-	assert card.transbordo(bondi1,"12/12/1998 2:40")==False
-	assert card2.transbordo(bondi1,"12/12/1998 2:40")==False
+	hora="12/12/1998 2:40"
+	horita=datetime.strptime(hora, "%d/%m/%Y %H:%M")
+	
+	assert card.transbordo(bondi1,horita)==False
+	assert card2.transbordo(bondi1,horita)==False
+	#        self.tiempoant= datetime.strptime(hour, "%d/%m/%Y %H:%M") #hora del bondi anterior
+
 	card.recarga(100)
 	card2.recarga(100)
 	card.pagar(bondi2,"12/12/1998 8:40")
 	card2.pagar(bondi2,"12/12/1998 8:40")
 	#Sin transbordo por mismo colectivo
-	assert card.transbordo(bondi2,"12/12/1998 8:50")==False
-	assert card2.transbordo(bondi2,"12/12/1998 8:50")==False
+	
+	hora="12/12/1998 8:50"
+	horita=datetime.strptime(hora, "%d/%m/%Y %H:%M")
+	
+	assert card.transbordo(bondi2,horita)==False
+	assert card2.transbordo(bondi2,horita)==False
 	#Sin transbordo por horario
-	assert card.transbordo(bondi1,"13/12/1998 4:40")==False
-	assert card2.transbordo(bondi1,"13/12/1998 4:40")==False
+	
+	hora="12/12/1998 4:40"
+	horita=datetime.strptime(hora, "%d/%m/%Y %H:%M")
+	assert card.transbordo(bondi1,horita)==False
+	assert card2.transbordo(bondi1,horita)==False
 	#Si tomamos tres en una hora, un transbordo y dos normales
 	card.pagar(bondi2,"12/12/1998 8:50")
 	card2.pagar(bondi2,"12/12/1998 8:50")
@@ -95,8 +108,8 @@ def testvrel():
 	card=tarjeta()
 	card2=medio()
 	bondi2=colectivo("papa",137,13)
-	assert card.viaje(bondi2,"12/12/1998 8:50")==False
-	assert card2.viaje(bondi2,"12/12/1998 8:50")==False
+	assert card.viaje==False
+	assert card2.viaje==False
 	card.pagar(bondi2,"12/12/1998 8:50")
 	card2.pagar(bondi2,"12/12/1998 8:50")
 	assert card.viaje[0].interno==13
