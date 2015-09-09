@@ -50,8 +50,8 @@ def testpagar():
 	card2=medio()
 	bondi1=colectivo("pepe",136,12)
 	bondi2=colectivo("papa",137,13)
-	assert card.pagar==false
-	assert card2.pagar==false
+	assert card.pagar==False
+	assert card2.pagar==False
 	card.recarga(100)
 	card2.recarga(100)
 	card.pagar(bondi1,"12/12/1998 8:30")
@@ -71,18 +71,18 @@ def testtransbordo():
 	bondi1=colectivo("pepe",136,12)
 	bondi2=colectivo("papa",137,13)
 	#Sin transbordo luego de crearse
-	assert card.transbordo(bondi1,"12/12/1998 2:40")==false
-	assert card2.transbordo(bondi1,"12/12/1998 2:40")==false
+	assert card.transbordo(bondi1,"12/12/1998 2:40")==False
+	assert card2.transbordo(bondi1,"12/12/1998 2:40")==False
 	card.recarga(100)
 	card2.recarga(100)
 	card.pagar(bondi2,"12/12/1998 8:40")
 	card2.pagar(bondi2,"12/12/1998 8:40")
 	#Sin transbordo por mismo colectivo
-	assert card.transbordo(bondi2,"12/12/1998 8:50")==false
-	assert card2.transbordo(bondi2,"12/12/1998 8:50")==false
+	assert card.transbordo(bondi2,"12/12/1998 8:50")==False
+	assert card2.transbordo(bondi2,"12/12/1998 8:50")==False
 	#Sin transbordo por horario
-	assert card.transbordo(bondi1,"13/12/1998 4:40")==false
-	assert card2.transbordo(bondi1,"13/12/1998 4:40")==false
+	assert card.transbordo(bondi1,"13/12/1998 4:40")==False
+	assert card2.transbordo(bondi1,"13/12/1998 4:40")==False
 	#Si tomamos tres en una hora, un transbordo y dos normales
 	card.pagar(bondi2,"12/12/1998 8:50")
 	card2.pagar(bondi2,"12/12/1998 8:50")
@@ -95,8 +95,8 @@ def testvrel():
 	card=tarjeta()
 	card2=medio()
 	bondi2=colectivo("papa",137,13)
-	assert card.viaje==false
-	assert card2.viaje==false
+	assert card.viaje==False
+	assert card2.viaje==False
 	card.pagar(bondi2,"12/12/1998 8:50")
 	card2.pagar(bondi2,"12/12/1998 8:50")
 	assert card.viaje[0].interno==13
@@ -108,8 +108,8 @@ def testvrel():
 
 
 #Test que no deberia andar
-def testnoanda():
-	assert 2==3
+#def testnoanda():
+#	assert 2==3
 
 
 	
