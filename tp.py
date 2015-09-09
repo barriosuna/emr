@@ -16,7 +16,7 @@ class tarjeta:
     horario1 = datetime.strptime(horario,"%d/%m/%Y %H:%M")    
     if self.transbordo(colectivo,horario1)==True:
       if self.money>=1.90:
-        self.money=self.money-1,90
+        self.money=self.money-1.90
         self.valido=False
         self.colant=0
         hour="01/01/0001 0:00"
