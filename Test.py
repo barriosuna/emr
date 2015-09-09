@@ -2,7 +2,7 @@ from tp import *
 
 #Tarjeta Comun
 
-#Metodo Pagar
+#Metodo asdPagar
 #Si el saldo es 0 no se puede viajar
 #Descuento viaje comun
 #Descuento un viaje transbordo
