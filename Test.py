@@ -37,9 +37,9 @@ def testrecarga():
 	card.recarga(196)
 	assert card.saldo==230
 	card.recarga(368)
-	assert card.saldo=630
+	assert card.saldo==630
 	card.recarga(20)
-	assert card.saldo=650
+	assert card.saldo==650
 
 def testpagar():
 	#Si no hay saldo no viajan
