@@ -122,8 +122,8 @@ def testvrel():
 	else:
 		a=True
 		
-	assert a==False
-	assert a==False
+	assert a==True
+	assert a==True
 	card.recarga(100)
 	card2.recarga(100)
 	card.pagar(bondi2,"12/12/1998 8:50")
