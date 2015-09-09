@@ -27,19 +27,19 @@ def testsaldo():
 	#saldo inicial =0
 	card=tarjeta()
 	card2=medio()
-	assert card.saldo==0
-	assert card2.saldo==0
+	assert card.saldo()==0
+	assert card2.saldo()==0
 
 def testrecarga():
 	#Cargue saldo comun y saldos bonificados
 	card=tarjeta()
 	card2=medio()
 	card.recarga(196)
-	assert card.saldo==230
+	assert card.saldo()==230
 	card.recarga(368)
-	assert card.saldo==630
+	assert card.saldo()==630
 	card.recarga(20)
-	assert card.saldo==650
+	assert card.saldo()==650
 
 def testpagar():
 	#Si no hay saldo no viajan
@@ -50,20 +50,20 @@ def testpagar():
 	card2=medio()
 	bondi1=colectivo("pepe",136,12)
 	bondi2=colectivo("papa",137,13)
-	assert card.pagar==False
-	assert card2.pagar==False
+	assert card.pagar(bondi1,"12/12/1998 8:30")==False
+	assert card2.pagar(bondi1,"12/12/1998 8:30")==False
 	card.recarga(100)
 	card2.recarga(100)
 	card.pagar(bondi1,"12/12/1998 8:30")
 	card2.pagar(bondi1,"12/12/1998 8:30")
-	assert card.saldo==round(94.25,2)
-	assert card2.saldo==round(97.1,2)
+	assert card.saldo()==round(94.25,2)
+	assert card2.saldo()==round(97.1,2)
 	card.pagar(bondi2,"12/12/1998 8:40")
 	card2.pagar(bondi2,"12/12/1998 8:40")
-	assert card.saldo==round(92.32,2)
-	assert card2.saldo==round(96.14,2)
+	assert card.saldo()==round(92.32,2)
+	assert card2.saldo()==round(96.14,2)
 	card2.pagar(bondi2,"13/12/1998 2:40")
-	assert card2.saldo==round(90.39,2)
+	assert card2.saldo()==round(90.39,2)
 
 def testtransbordo():
 	card=tarjeta()
@@ -88,15 +88,15 @@ def testtransbordo():
 	card2.pagar(bondi2,"12/12/1998 8:50")
 	card.pagar(bondi2,"12/12/1998 9:00")
 	card2.pagar(bondi2,"12/12/1998 9:00")
-	assert card.saldo==round(86.6,2)
-	assert card2.saldo==round(93.24,2)
+	assert card.saldo()==round(86.6,2)
+	assert card2.saldo()==round(93.24,2)
 
 def testvrel():
 	card=tarjeta()
 	card2=medio()
 	bondi2=colectivo("papa",137,13)
-	assert card.viaje==False
-	assert card2.viaje==False
+	assert card.viaje(bondi2,"12/12/1998 8:50")==False
+	assert card2.viaje(bondi2,"12/12/1998 8:50")==False
 	card.pagar(bondi2,"12/12/1998 8:50")
 	card2.pagar(bondi2,"12/12/1998 8:50")
 	assert card.viaje[0].interno==13
