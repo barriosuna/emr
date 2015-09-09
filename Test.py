@@ -112,12 +112,12 @@ def testvrel():
 	card2=medio()
 	bondi2=colectivo("papa",137,13)
 	bondi1=colectivo("pepe",136,12)
-	if not card.viaje:
+	if not card.viajes:
 		a=False
 	else:
 		a=True
 		
-	if not card2.viaje:
+	if not card2.viajes:
 		a=False
 	else:
 		a=True
@@ -128,15 +128,15 @@ def testvrel():
 	card2.recarga(100)
 	card.pagar(bondi2,"12/12/1998 8:50")
 	card2.pagar(bondi2,"12/12/1998 8:50")
-	assert len(card.viaje)==1
-	assert card.viaje[0].interno==13
-	assert card2.viaje[0].interno==13
+	assert len(card.viajes)==1
+	assert card.viajes[0].interno==13
+	assert card2.viajes[0].interno==13
 	
 	card.pagar(bondi2,"12/12/1998 9:40")
 	card2.pagar(bondi2,"12/12/1998 9:40")
-	assert len(card.viaje)==2
+	assert len(card.viajes)==2
 	
-	assert len(card2.viaje)==2
+	assert len(card2.viajes)==2
 
 
 #Test que no deberia andar
