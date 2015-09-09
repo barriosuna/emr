@@ -111,12 +111,12 @@ def testvrel():
 	card=tarjeta()
 	card2=medio()
 	bondi2=colectivo("papa",137,13)
-	if card.viaje:
+	if not card.viaje:
 		a=False
 	else:
 		a=True
 		
-	if card2.viaje:
+	if not card2.viaje:
 		a=False
 	else:
 		a=True
