@@ -97,12 +97,15 @@ def testtransbordo():
 	assert card.transbordo(bondi1,horita)==False
 	assert card2.transbordo(bondi1,horita)==False
 	#Si tomamos tres en una hora, un transbordo y dos normales
+	
 	card.pagar(bondi1,"12/12/1998 8:50")
 	card2.pagar(bondi1,"12/12/1998 8:50")
 	card.pagar(bondi2,"12/12/1998 9:00")
+	
 	card2.pagar(bondi2,"12/12/1998 9:00")
-	assert round(card.saldo())==round(86.6,2)
-	assert round(card2.saldo())==round(93.24,2)
+	
+	assert round(card.saldo(),2)==round(86.6,2)
+	assert round(card2.saldo(),2)==round(93.24,2)
 
 def testvrel():
 	card=tarjeta()
