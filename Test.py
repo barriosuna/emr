@@ -37,9 +37,9 @@ def testrecarga():
 	card.recarga(196)
 	assert card.saldo()==230
 	card.recarga(368)
-	assert card.saldo()==630
+	assert card.saldo()==690
 	card.recarga(20)
-	assert card.saldo()==650
+	assert card.saldo()==710
 
 def testpagar():
 	#Si no hay saldo no viajan
@@ -50,8 +50,8 @@ def testpagar():
 	card2=medio()
 	bondi1=colectivo("pepe",136,12)
 	bondi2=colectivo("papa",137,13)
-	assert card.pagar(bondi1,"12/12/1998 8:30")==False
-	assert card2.pagar(bondi1,"12/12/1998 8:30")==False
+	assert card.pay(bondi1,"12/12/1998 8:30")==False
+	assert card2.pay(bondi1,"12/12/1998 8:30")==False
 	card.recarga(100)
 	card2.recarga(100)
 	card.pagar(bondi1,"12/12/1998 8:30")
