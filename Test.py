@@ -129,9 +129,12 @@ def testvrel():
 	card2.pagar(bondi2,"12/12/1998 8:50")
 	assert card.viaje[0].interno==13
 	assert card2.viaje[0].interno==13
-	card.pagar(bondi2,"12/12/1998 8:50")
-	card2.pagar(bondi2,"12/12/1998 8:50")
+	assert len(card.viaje)==1
+	card.pagar(bondi2,"12/12/1998 9:40")
+	
+	card2.pagar(bondi2,"12/12/1998 9:40")
 	assert len(card.viaje)==2
+	
 	assert len(card2.viaje)==2
 
 
