@@ -111,6 +111,7 @@ def testvrel():
 	card=tarjeta()
 	card2=medio()
 	bondi2=colectivo("papa",137,13)
+	bondi1=colectivo("pepe",136,12)
 	if not card.viaje:
 		a=False
 	else:
@@ -131,8 +132,8 @@ def testvrel():
 	assert card.viaje[0].interno==13
 	assert card2.viaje[0].interno==13
 	
-	card.pagar(bondi2,"12/12/1998 9:40")
-	card2.pagar(bondi2,"12/12/1998 9:40")
+	card.pagar(bondi1,"12/12/1998 9:40")
+	card2.pagar(bondi1,"12/12/1998 9:40")
 	assert len(card.viaje)==2
 	
 	assert len(card2.viaje)==2
