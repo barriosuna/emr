@@ -126,17 +126,17 @@ def testvrel():
 	assert a==True
 	card.recarga(100)
 	card2.recarga(100)
+	
 	card.pagar(bondi2,"12/12/1998 8:50")
 	card2.pagar(bondi2,"12/12/1998 8:50")
-	assert len(card.viajes)==1
 	assert card.viajes[0].interno==13
 	assert card2.viajes[0].interno==13
 	
 	card.pagar(bondi2,"12/12/1998 9:40")
 	card2.pagar(bondi2,"12/12/1998 9:40")
-	assert len(card.viajes)==2
+	assert len(card.viajes)==20
 	
-	assert len(card2.viajes)==2
+	assert len(card2.viajes)==20
 
 
 #Test que no deberia andar
