@@ -77,7 +77,7 @@ def testtransbordo():
 	
 	assert card.transbordo(bondi1,horita)==False
 	assert card2.transbordo(bondi1,horita)==False
-	#        self.tiempoant= datetime.strptime(hour, "%d/%m/%Y %H:%M") #hora del bondi anterior
+	#self.tiempoant= datetime.strptime(hour, "%d/%m/%Y %H:%M") #hora del bondi anterior
 
 	card.recarga(100)
 	card2.recarga(100)
@@ -97,19 +97,29 @@ def testtransbordo():
 	assert card.transbordo(bondi1,horita)==False
 	assert card2.transbordo(bondi1,horita)==False
 	#Si tomamos tres en una hora, un transbordo y dos normales
-	card.pagar(bondi2,"12/12/1998 8:50")
-	card2.pagar(bondi2,"12/12/1998 8:50")
+	card.pagar(bondi1,"12/12/1998 8:50")
+	card2.pagar(bondi1,"12/12/1998 8:50")
 	card.pagar(bondi2,"12/12/1998 9:00")
 	card2.pagar(bondi2,"12/12/1998 9:00")
-	assert card.saldo()==round(86.6,2)
-	assert card2.saldo()==round(93.24,2)
+	assert round(card.saldo())==round(86.6,2)
+	assert round(card2.saldo())==round(93.24,2)
 
 def testvrel():
 	card=tarjeta()
 	card2=medio()
 	bondi2=colectivo("papa",137,13)
-	assert card.viaje==False
-	assert card2.viaje==False
+	if card.viaje[]:
+		a=False
+	else:
+		a=True
+		
+	if card2.viaje[]:
+		a=False
+	else:
+		a=True
+		
+	assert a==False
+	assert a==False
 	card.pagar(bondi2,"12/12/1998 8:50")
 	card2.pagar(bondi2,"12/12/1998 8:50")
 	assert card.viaje[0].interno==13
