@@ -3,4 +3,4 @@ python:
   - "3.4"
 #script: "Test.py ."
 script: "python Test.py ."
-#script: "py.test ."
+#script: "py.test Test.py"
