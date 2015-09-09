@@ -107,6 +107,14 @@ def testvrel():
 	assert len(card2.viaje)==2
 
 
+#Test que no deberia andar
+def testnoanda():
+	card=tarjeta()
+	bondi2=colectivo("papa",137,13)
+	assert card.pagar(bondi2,"12/12/1999 8:49")==true
+
+
+	
 
 
 
