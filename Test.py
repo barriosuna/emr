@@ -123,6 +123,8 @@ def testvrel():
 		
 	assert a==False
 	assert a==False
+	card.recarga(100)
+	card2.recarga(100)
 	card.pagar(bondi2,"12/12/1998 8:50")
 	card2.pagar(bondi2,"12/12/1998 8:50")
 	assert card.viaje[0].interno==13
